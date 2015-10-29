@@ -1,13 +1,17 @@
 package com.example.android.viewpagerproject_clase10;
 
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    TabLayout tabLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +22,13 @@ public class MainActivity extends AppCompatActivity {
         ScreenSlidePagerAdapter adapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
         Toast.makeText(this, "asdfasdf", Toast.LENGTH_SHORT).show();
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+
+        tabLayout.setupWithViewPager(pager);
     }
 
     @Override

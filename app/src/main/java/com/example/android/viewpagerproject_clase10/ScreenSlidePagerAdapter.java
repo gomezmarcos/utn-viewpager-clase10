@@ -28,6 +28,19 @@ public class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter{
         return null;
     }
 
+
+    // Devolvemos el titulo de cada Fragment
+    @Override
+    public CharSequence getPageTitle(int position)
+    {
+        switch(position)
+        {
+            case 0: return "Salta";
+            case 1: return "Santa Cruz";
+            default: return "Córdoba";
+        }
+    }
+
     @Override
     public int getCount()
     {
