@@ -1,9 +1,11 @@
 package com.example.android.viewpagerproject_clase10;
 
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +13,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ViewPager pager = (ViewPager)findViewById(R.id.pager);
+        ScreenSlidePagerAdapter adapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        pager.setAdapter(adapter);
+        Toast.makeText(this, "asdfasdf", Toast.LENGTH_SHORT).show();
     }
 
     @Override
